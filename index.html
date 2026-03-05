@@ -3,222 +3,282 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="BioVal Lab - BioHacking futurista, optimización humana y tecnología avanzada.">
-<title>BioVal Lab | Futuristic BioHacking</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<title>BIOVAL LAB</title>
+<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,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">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{
-    font-family:'Rajdhani',sans-serif;
-    background:#02040a;
-    color:white;
-    overflow-x:hidden;
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Animated background */
-body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    background:radial-gradient(circle at 20% 20%, #00f0ff22 0%, transparent 40%),
-               radial-gradient(circle at 80% 80%, #0066ff22 0%, transparent 40%);
-    animation:moveBg 15s linear infinite;
-    z-index:-1;
-}
-@keyframes moveBg{
-    0%{transform:translate(0,0)}
-    50%{transform:translate(-10%,-10%)}
-    100%{transform:translate(0,0)}
+body {
+  font-family: 'Impact', monospace;
+  background: #0b0f14;
+  color: #00ffc8;
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-/* NAV */
-nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 60px;
-    background:rgba(0,0,0,0.7);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid #00f0ff55;
-    z-index:1000;
-}
-nav img{height:45px;filter:drop-shadow(0 0 10px #00f0ff)}
-nav ul{display:flex;gap:40px;list-style:none}
-nav ul li a{
-    text-decoration:none;
-    color:#00f0ff;
-    font-weight:600;
-    letter-spacing:2px;
-    transition:.3s;
-}
-nav ul li a:hover{
-    text-shadow:0 0 15px #00f0ff;
+/* Parallax */
+.parallax-section {
+  position: relative;
+  height: 100vh;
+  transform-style: preserve-3d;
 }
 
-/* HERO */
-.hero{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,20,0.95)),
-    url('https://images.unsplash.com/photo-1535223289827-42f1e9919769') center/cover fixed;
-}
-.hero h1{
-    font-family:'Orbitron',sans-serif;
-    font-size:4rem;
-    color:#00f0ff;
-    text-shadow:0 0 20px #00f0ff,0 0 40px #0066ff;
-}
-.hero p{
-    margin-top:20px;
-    font-size:1.3rem;
-    letter-spacing:3px;
-    opacity:.8;
-}
-.btn{
-    margin-top:40px;
-    padding:15px 50px;
-    background:transparent;
-    border:2px solid #00f0ff;
-    color:#00f0ff;
-    font-weight:700;
-    letter-spacing:3px;
-    cursor:pointer;
-    transition:.4s;
-}
-.btn:hover{
-    background:#00f0ff;
-    color:#000;
-    box-shadow:0 0 25px #00f0ff;
+.layer-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, , #000);
+  transform: translateZ(-1px) scale(2);
 }
 
-/* Sections */
-section{
-    padding:120px 12%;
-    text-align:center;
-}
-section h2{
-    font-family:'Orbitron',sans-serif;
-    font-size:2.5rem;
-    margin-bottom:60px;
-    color:#00f0ff;
-    text-shadow:0 0 15px #00f0ff;
-}
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:40px;
-}
-.card{
-    padding:40px;
-    background:rgba(0,20,40,0.6);
-    border:1px solid #00f0ff33;
-    border-radius:15px;
-    transition:.4s;
-    backdrop-filter:blur(10px);
-}
-.card:hover{
-    transform:translateY(-15px) scale(1.03);
-    border:1px solid #00f0ff;
-    box-shadow:0 0 30px #00f0ff55;
-}
-.card h3{
-    margin-bottom:20px;
-    color:#00f0ff;
+.layer-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(0,255,200,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,200,0.15) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: translateZ(-0.5px) scale(1.5);
 }
 
-/* Parallax Divider */
-.parallax{
-    height:400px;
-    background:url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063') center/cover fixed;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-.parallax h2{
-    font-size:3rem;
-    font-family:'Orbitron';
-    color:white;
-    text-shadow:0 0 25px #00f0ff;
+/* ========================= */
+/* NEURAL PARTICLES */
+/* ========================= */
+
+.neural-network {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
 }
 
-footer{
-    padding:40px;
-    text-align:center;
-    border-top:1px solid #00f0ff33;
-    background:#000814;
-    font-size:.9rem;
-    letter-spacing:2px;
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00ffc8;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ffc8;
+  animation: float 10s linear infinite;
+  opacity: 0.8;
 }
 
-@media(max-width:768px){
-    .hero h1{font-size:2.5rem}
-    nav{padding:15px 20px}
+@keyframes float {
+  from {
+    transform: translateY(100vh) translateX(0);
+  }
+  to {
+    transform: translateY(-10vh) translateX(50px);
+  }
 }
+
+/* ========================= */
+/* BIOMETRIC PANEL */
+/* ========================= */
+
+.biometric-panel {
+  position: absolute;
+  width: 100%;
+  bottom: 40px;
+  font-family: 'Impact', monospace;
+  font-size: 16px;
+  color: #00ffc8;
+  background: rgba(0, 0, 0, 0);
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  
+}
+
+.value {
+  color: #00ffc8;
+  animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Alpha wave mini graph */
+
+.alpha-wave {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.alpha-wave::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    #00ffc8 12px,
+    transparent 14px
+  );
+  animation: alphaMove 1.5s linear infinite;
+}
+
+@keyframes alphaMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Contenido */
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ========================= */
+/* HEADING BIOMÉTRICO */
+/* ========================= */
+
+h1 {
+  position: relative;
+  font-size: 120px;
+  letter-spacing: 4px;
+  color: #0b0f14;
+  text-shadow:
+    0 0 10px #00ffc8,
+    0 0 20px #00ffc8,
+    0 0 40px #00ffc8;
+  animation: glitch 2s infinite;
+}
+
+/* GLITCH EFFECT */
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+p {
+  margin-top: 1.5rem;
+  max-width: 600px;
+  color: #0b0f14;
+  font-size: 20px;
+  letter-spacing: 1px;
+text-shadow:
+    0 0 10px #00ffc8,
+    0 0 20px #00ffc8,
+    0 0 10px #00ffc8;
+  animation: glitch 6s infinite;
+}
+
+.section {
+  height: 100vh;
+  font-size: 20px;
+  background: #0b0f14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================= */
+/* CRT SCANLINES EFFECT */
+/* ========================= */
+
+.crt-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: 
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0px,
+      rgba(0, 0, 0, 0.3) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+  mix-blend-mode: overlay;
+  animation: flicker 0.20s infinite;
+}
+
+/* Flicker analógico */
+
+@keyframes flicker {
+  0% { opacity: 0.50; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.92; }
+}
+
+/* Curvatura ligera de pantalla */
+
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0,0,0,0.4) 100%
+  );
+  z-index: 998;
+}
+
 </style>
 </head>
+
 <body>
 
-<nav>
-<img src="logo.png" alt="BioVal Lab Logo">
-<ul>
-<li><a href="#about">LAB</a></li>
-<li><a href="#services">PROTOCOLS</a></li>
-<li><a href="#contact">ACCESS</a></li>
-</ul>
-</nav>
+<section class="parallax-section">
+<div class="neural-network">
+  <div class="particle" style="left:10%; animation-duration:12s;"></div>
+  <div class="particle" style="left:25%; animation-duration:8s;"></div>
+  <div class="particle" style="left:40%; animation-duration:15s;"></div>
+  <div class="particle" style="left:60%; animation-duration:10s;"></div>
+  <div class="particle" style="left:75%; animation-duration:13s;"></div>
+  <div class="particle" style="left:85%; animation-duration:9s;"></div>
+  <div class="particle" style="right:10%; animation-duration:12s;"></div>
+  <div class="particle" style="right:25%; animation-duration:8s;"></div>
+  <div class="particle" style="right:40%; animation-duration:15s;"></div>
+  <div class="particle" style="right:60%; animation-duration:10s;"></div>
+  <div class="particle" style="right:75%; animation-duration:13s;"></div>
+  <div class="particle" style="right:85%; animation-duration:9s;"></div>
 
-<div class="hero">
-<div>
-<h1>BIOHACK THE FUTURE</h1>
-<p>HUMAN UPGRADE · NEURAL POWER · LONGEVITY SCIENCE</p>
-<button class="btn">INICIAR PROTOCOLO</button>
 </div>
-</div>
+  <div class="layer-bg"></div>
+  <div class="layer-grid"></div>
 
-<section id="about">
-<h2>LABORATORIO DE OPTIMIZACIÓN HUMANA</h2>
-<p>Integramos biotecnología, análisis de biomarcadores y protocolos avanzados para llevar el rendimiento humano al siguiente nivel.</p>
+  <div class="content">
+
+   <h1 data-text="BIOVAL LAB">BIOVAL LAB</h1>
+<div class="eeg"></div>
+    <p>
+      " Hack the Biology, Own your Data "
+    </p>
+  </div>
 </section>
 
-<div class="parallax">
-<h2>EVOLVE BEYOND LIMITS</h2>
-</div>
+<section class="section"> SOBRE NOSOTROS </section>
 
-<section id="services">
-<h2>PROTOCOLOS AVANZADOS</h2>
-<div class="cards">
-<div class="card">
-<h3>NeuroEnhancement</h3>
-<p>Estimulación cognitiva y optimización neuronal.</p>
-</div>
-<div class="card">
-<h3>BioData Analytics</h3>
-<p>Monitoreo continuo, biometría avanzada e IA aplicada a salud.</p>
-</div>
-<div class="card">
-<h3>Longevity Engineering</h3>
-<p>Estrategias científicas para extender la salud y vitalidad.</p>
-</div>
-</div>
-</section>
-
-<section id="contact">
-<h2>ACCESS TERMINAL</h2>
-<p>biolabsvlc@gmail.com</p>
-</section>
-
-<footer>
-© 2026 BIOVAL LAB · FUTURE HUMAN PERFORMANCE
-</footer>
+<div class="crt-overlay"></div>
 
 </body>
 </html>
