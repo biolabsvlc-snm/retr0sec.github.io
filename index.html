@@ -50,6 +50,164 @@ body {
 }
 
 /* ========================= */
+/* BIOVAL CARD GROUP */
+/* ========================= */
+
+.bioval-cards{
+padding:120px 40px;
+background:#0b0f14;
+display:flex;
+justify-content:center;
+}
+
+.card-group{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+max-width:1200px;
+width:100%;
+}
+
+/* CARD */
+
+.card{
+
+position:relative;
+background:rgba(10,20,25,0.6);
+border:1px solid rgba(0,255,200,0.25);
+padding:30px;
+border-radius:12px;
+
+backdrop-filter:blur(6px);
+
+transition:all .4s ease;
+
+overflow:hidden;
+}
+
+/* NEON EDGE */
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+border-radius:12px;
+
+padding:1px;
+
+background:linear-gradient(
+120deg,
+transparent,
+#00ffc8,
+#00b3ff,
+transparent
+);
+
+-webkit-mask:
+linear-gradient(#000 0 0) content-box,
+linear-gradient(#000 0 0);
+
+mask-composite:exclude;
+
+animation:borderMove 6s linear infinite;
+}
+
+@keyframes borderMove{
+
+0%{background-position:0%}
+100%{background-position:400%}
+
+}
+
+/* HOVER */
+
+.card:hover{
+
+transform:translateY(-10px) scale(1.02);
+
+box-shadow:
+0 0 25px rgba(0,255,200,0.3),
+0 0 60px rgba(0,179,255,0.2);
+
+}
+
+/* GLOW */
+
+.card-glow{
+
+position:absolute;
+
+inset:0;
+
+background:radial-gradient(circle at center,
+rgba(0,255,200,0.15),
+transparent 70%);
+
+opacity:0;
+
+transition:opacity .4s;
+}
+
+.card:hover .card-glow{
+
+opacity:1;
+
+}
+
+/* TITLES */
+
+.card h3{
+
+color: #0b0f14;
+
+letter-spacing:2px;
+
+margin-bottom:15px;
+
+text-shadow:
+0 0 8px #00ffc8,
+0 0 20px #00b3ff;
+
+}
+
+/* TEXT */
+
+.card p{
+
+font-size:0.9rem;
+
+line-height:1.6;
+
+color:#0b0f14;
+
+margin-bottom:20px;
+
+}
+
+/* TAG */
+
+.tag{
+
+font-size:0.7rem;
+
+letter-spacing:2px;
+
+color:#00ffc8;
+
+border:1px solid rgba(0,255,200,0.4);
+
+padding:6px 10px;
+
+border-radius:20px;
+
+}
+
+
+/* ========================= */
 /* NEURAL PARTICLES */
 /* ========================= */
 
@@ -276,7 +434,76 @@ body::after {
   </div>
 </section>
 
-<section class="section"> SOBRE NOSOTROS </section>
+<section class="section"> 
+
+<section class="bioval-cards">
+
+<div class="card-group">
+
+<div class="card">
+<div class="card-glow"></div>
+
+<h3>NEURODATA</h3>
+
+<p>
+Investigación y captura de señales cerebrales mediante EEG
+para analizar estados cognitivos como concentración,
+estrés, fatiga mental y creatividad.
+</p>
+
+<span class="tag">EEG · BCI · Brain Signals</span>
+</div>
+
+
+<div class="card">
+<div class="card-glow"></div>
+
+<h3>WEARABLES</h3>
+
+<p>
+Integración de sensores biométricos para monitorizar
+frecuencia cardiaca, HRV, actividad eléctrica cerebral
+y otros biomarcadores fisiológicos en tiempo real.
+</p>
+
+<span class="tag">HRV · BPM · Sensors</span>
+</div>
+
+
+<div class="card">
+<div class="card-glow"></div>
+
+<h3>AI ANALYTICS</h3>
+
+<p>
+Procesamiento de señales biométricas mediante
+modelos de inteligencia artificial para detectar
+patrones cognitivos y optimizar rendimiento mental.
+</p>
+
+<span class="tag">Machine Learning · NeuroAI</span>
+</div>
+
+
+<div class="card">
+<div class="card-glow"></div>
+
+<h3>OPEN SOURCE LAB</h3>
+
+<p>
+BIOVAL LAB desarrolla herramientas abiertas para
+biohacking, investigación personal y desarrollo
+de sistemas neurotecnológicos accesibles.
+</p>
+
+<span class="tag">Python · Open Hardware</span>
+</div>
+
+</div>
+
+</section>
+</section>
+
 
 <div class="crt-overlay"></div>
 
