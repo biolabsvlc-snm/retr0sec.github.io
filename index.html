@@ -13,6 +13,11 @@
 
 <style>
 
+html{
+scroll-behavior:smooth;
+}
+
+
 /* Reset */
 * {
   margin: 0;
@@ -30,6 +35,69 @@ body {
   overflow-y: auto;
 }
 
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.navbar{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:70px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:0 40px;
+
+background:rgba(0,10,15,0.6);
+
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid rgba(0,255,200,0.2);
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:18px;
+letter-spacing:3px;
+color:#00ffc8;
+
+}
+
+.nav-links{
+
+display:flex;
+gap:30px;
+list-style:none;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+color:#9fbec4;
+font-size:14px;
+letter-spacing:2px;
+
+transition:0.3s;
+
+}
+
+.nav-links a:hover{
+
+color:#00ffc8;
+
+}
+
 /* Parallax */
 .parallax-section {
   position: relative;
@@ -40,7 +108,7 @@ body {
 .layer-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, , #000);
+  background: radial-gradient(circle at center, #020617, #000);
   transform: translateZ(-1px) scale(2);
 }
 
@@ -431,12 +499,8 @@ overflow:hidden;
 }
 
 #brainCanvas{
-z-index: 8;
-position:absolute;
-top:0;
-left:0;
-width:auto;
-height:auto;
+width:100%;
+height:100%;
 }
 
 .brain-content{
@@ -576,10 +640,8 @@ text-shadow:0 0 20px #00ffc8;
 }
 
 .brain-container{
-margin-bottom: 200px;
-width:900px;
-height: auto;
-
+width:90%;
+max-width:900px;
 }
 
 /* conexiones neuronales */
@@ -636,13 +698,225 @@ margin-bottom:12px;
 
 }
 
+@media (max-width: 1024px){
+
+h1{
+font-size:70px;
+}
+
+p{
+font-size:18px;
+padding:0 20px;
+}
+
+.content{
+padding:20px;
+}
+
+/* grid biométrico */
+
+.bio-grid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+/* señal biométrica */
+
+#bioSignal{
+width:100%;
+height:100px;
+}
+
+/* cerebro */
+
+.brain-container{
+width:100%;
+max-width:600px;
+}
+
+.brain-info{
+max-width:90%;
+margin-top:200px;
+}
+
+.card-group{
+gap:25px;
+}
+
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 600px){
+
+/* hero */
+
+h1{
+font-size:42px;
+letter-spacing:2px;
+}
+
+p{
+font-size:16px;
+max-width:90%;
+}
+
+/* evitar cortes de altura */
+
+.parallax-section,
+.section,
+.biometric-section{
+height:auto;
+min-height:100vh;
+padding:80px 20px;
+}
+
+/* partículas menos densas */
+
+.particle{
+width:3px;
+height:3px;
+}
+
+/* grid biométrico */
+
+.bio-grid{
+grid-template-columns:1fr;
+gap:18px;
+}
+
+/* cards */
+
+.card{
+padding:20px;
+}
+
+.card h3{
+font-size:18px;
+}
+
+/* biométrico */
+
+.bio-value{
+font-size:28px;
+}
+
+/* señal */
+
+#bioSignal{
+width:100%;
+height:80px;
+}
+
+/* cerebro */
+
+.brain-container{
+width:100%;
+max-width:100%;
+}
+
+.brain-title{
+font-size:24px;
+}
+
+.brain-info{
+margin-top:120px;
+font-size:13px;
+max-width:95%;
+}
+
+/* panel inferior */
+
+.biometric-panel{
+font-size:14px;
+padding:15px;
+}
+
+}
+
+@media (max-width:600px){
+
+.crt-overlay{
+display:none;
+}
+
+.layer-grid{
+opacity:0.3;
+}
+
+}
+
+
+
+/* ========================= */
+/* BACK TO TOP */
+/* ========================= */
+
+#backToTop{
+
+position:relative;
+
+bottom:80px;
+
+left: 1200px;
+
+width:50px;
+height:50px;
+
+border:none;
+
+border-radius:50%;
+
+background:transparent;
+
+color:white;
+
+font-size:24px;
+
+cursor:pointer;
+
+display:none;
+
+z-index:2000;
+
+box-shadow:
+0 0 10px #00ffc8,
+0 0 30px rgba(0,255,200,0.5);
+
+transition:0.3s;
+
+}
+
+#backToTop:hover{
+
+transform:scale(1.15);
+
+}
 </style>
 
 </head>
 
 <body>
+<nav class="navbar">
 
-<section class="parallax-section">
+<div class="logo">BIOVAL LAB</div>
+
+<ul class="nav-links">
+
+<li><a href="#home">HOME</a></li>
+<li><a href="#lab">LAB</a></li>
+<li><a href="#brain">NEURO</a></li>
+<li><a href="#biometrics">BIOMETRICS</a></li>
+<li><a href="#neuralmap">RESEARCH</a></li>
+
+</ul>
+
+</nav>
+
+<section id="home" class="parallax-section">
 <div class="neural-network">
   <div class="particle" style="left:10%; animation-duration:12s;"></div>
   <div class="particle" style="left:25%; animation-duration:8s;"></div>
@@ -671,7 +945,7 @@ margin-bottom:12px;
   </div>
 </section>
 
-<section class="section"> 
+<section id="lab" class="section">
 <div class="crt-overlay">  </div>
 <section class="bioval-lab">
 
@@ -734,7 +1008,7 @@ investigación personal y experimentación científica.
 </section>
 
 </section>
-<section class="brain-section">
+<section id="brain" class="brain-section">
 
 <canvas id="brainCanvas"></canvas>
 
@@ -751,7 +1025,7 @@ y optimización del rendimiento humano mediante wearables y machine learning.
 
 </section>
 
-<section class="biometric-section">
+<section id="biometrics" class="biometric-section">
 
 <div class="biometric-container">
 
@@ -793,7 +1067,7 @@ y optimización del rendimiento humano mediante wearables y machine learning.
 
 </section>
 
-<section class="brain-section">
+<section id="neuralmap" class="brain-section">
 
 <div class="brain-info">
 <h2 class="brain-title">NEURAL ACTIVITY MAP</h2>
@@ -858,8 +1132,89 @@ todo ello manteniendo una conexión completamente segura y no invasiva.
 
 </div>
 
+<section id="research" class="research">
+
+<h2>RESEARCH AREAS</h2>
+
+<div class="research-grid">
+
+<div>
+EEG SIGNAL PROCESSING
+</div>
+
+<div>
+COGNITIVE AI
+</div>
+
+<div>
+WEARABLE BIOSENSORS
+</div>
+
+<div>
+HUMAN MACHINE INTERFACE
+</div>
+
+</div>
+
 </section>
 
+</section>
+
+
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+const trigger = window.innerHeight * 0.85;
+
+reveals.forEach(el => {
+
+const top = el.getBoundingClientRect().top;
+
+if(top < trigger){
+
+el.classList.add("visible");
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+</script>
+
+<script>
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+
+const loader = new GLTFLoader();
+
+loader.load("/assets/brain.glb", function(gltf){
+
+const brain = gltf.scene;
+
+brain.scale.set(2,2,2);
+
+scene.add(brain);
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+brain.rotation.y += 0.002;
+
+renderer.render(scene,camera);
+
+}
+
+animate();
+
+});
+
+</script>
 
 <script type="module">
 
@@ -1011,7 +1366,7 @@ document.getElementById("focus").innerText =
 setInterval(updateMetrics,2000);
 
 </script>
-
+<button id="backToTop">↑</button>
 <script>
 
 const neurons = document.querySelectorAll(".neuron");
@@ -1031,6 +1386,35 @@ randomNeuron.classList.add("active");
 }
 
 setInterval(neuralActivity,500);
+
+</script>
+
+<script>
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function(){
+
+if(window.scrollY > 300){
+
+backToTop.style.display = "block";
+
+}else{
+
+backToTop.style.display = "none";
+
+}
+
+});
+
+backToTop.addEventListener("click", function(){
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+});
 
 </script>
 
