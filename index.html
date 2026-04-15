@@ -1,1422 +1,259 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BIOVAL LAB</title>
-<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,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">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
-
-
-<style>
-
-html{
-scroll-behavior:smooth;
-}
-
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Impact', monospace;
-  background: #0b0f14;
-  color: #00ffc8;
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-
-/* ========================= */
-/* NAVBAR */
-/* ========================= */
-
-.navbar{
-
-position:fixed;
-top:0;
-left:0;
-
-width:100%;
-height:70px;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:0 40px;
-
-background:rgba(0,10,15,0.6);
-
-backdrop-filter:blur(10px);
-
-border-bottom:1px solid rgba(0,255,200,0.2);
-
-z-index:1000;
-
-}
-
-.logo{
-
-font-size:18px;
-letter-spacing:3px;
-color:#00ffc8;
-
-}
-
-.nav-links{
-
-display:flex;
-gap:30px;
-list-style:none;
-
-}
-
-.nav-links a{
-
-text-decoration:none;
-color:#9fbec4;
-font-size:14px;
-letter-spacing:2px;
-
-transition:0.3s;
-
-}
-
-.nav-links a:hover{
-
-color:#00ffc8;
-
-}
-
-/* Parallax */
-.parallax-section {
-  position: relative;
-  height: 100vh;
-  transform-style: preserve-3d;
-}
-
-.layer-bg {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, #020617, #000);
-  transform: translateZ(-1px) scale(2);
-}
-
-.layer-grid {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(0,255,200,0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,255,200,0.15) 1px, transparent 1px);
-  background-size: 50px 50px;
-  transform: translateZ(-0.5px) scale(1.5);
-}
-
-
-
-/* ========================= */
-/* NEURAL PARTICLES */
-/* ========================= */
-
-.neural-network {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: #00ffc8;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #00ffc8;
-  animation: float 10s linear infinite;
-  opacity: 0.8;
-}
-
-@keyframes float {
-  from {
-    transform: translateY(100vh) translateX(0);
-  }
-  to {
-    transform: translateY(-10vh) translateX(50px);
-  }
-}
-
-/* ========================= */
-/* BIOMETRIC PANEL */
-/* ========================= */
-
-.biometric-panel {
-  position: absolute;
-  width: 100%;
-  bottom: 40px;
-  font-family: 'Impact', monospace;
-  font-size: 16px;
-  color: #00ffc8;
-  background: rgba(0, 0, 0, 0);
-  padding: 20px;
-  backdrop-filter: blur(8px);
-  
-}
-
-.value {
-  color: #00ffc8;
-  animation: pulse 4s infinite;
-}
-
-@keyframes pulse {
-  0%,100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-/* Alpha wave mini graph */
-
-.alpha-wave {
-  width: 100%;
-  height: 40px;
-  position: relative;
-  overflow: hidden;
-  margin-top: 10px;
-}
-
-.alpha-wave::before {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 10px,
-    #00ffc8 12px,
-    transparent 14px
-  );
-  animation: alphaMove 1.5s linear infinite;
-}
-
-@keyframes alphaMove {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* Contenido */
-.content {
-  position: relative;
-  z-index: 2;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* ========================= */
-/* HEADING BIOMÉTRICO */
-/* ========================= */
-
-h1 {
-  position: relative;
-  font-size: 120px;
-  letter-spacing: 4px;
-  color: #0b0f14;
-  text-shadow:
-    0 0 10px #00ffc8,
-    0 0 20px #00ffc8,
-    0 0 40px #00ffc8;
-  animation: glitch 2s infinite;
-}
-
-/* GLITCH EFFECT */
-
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
-}
-
-p {
-  margin-top: 1.5rem;
-  max-width: 600px;
-  color: #0b0f14;
-  font-size: 20px;
-  letter-spacing: 1px;
-text-shadow:
-    0 0 10px #00ffc8,
-    0 0 20px #00ffc8,
-    0 0 10px #00ffc8;
-  animation: glitch 6s infinite;
-}
-
-.section {
-  height: 100vh;
-  font-size: 20px;
-  background: #0b0f14;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ========================= */
-/* CRT SCANLINES EFFECT */
-/* ========================= */
-
-.crt-overlay {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  background: 
-    repeating-linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3) 0px,
-      rgba(0, 0, 0, 0.3) 1px,
-      transparent 2px,
-      transparent 4px
-    );
-  mix-blend-mode: overlay;
-  animation: flicker 0.15s infinite;
-}
-
-/* Flicker analógico */
-
-@keyframes flicker {
-  0% { opacity: 0.20; }
-  50% { opacity: 0.8; }
-  100% { opacity: 0.92; }
-}
-
-/* Curvatura ligera de pantalla */
-
-body::after {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 80%,
-    rgba(0,0,0,0.4) 100%
-  );
-  z-index: 998;
-}
-
-/* ===================== */
-/* LAB SECTION */
-/* ===================== */
-
-.bioval-lab{
-position:relative;
-padding:140px 40px;
-background:#0b0f14;
-overflow:hidden;
-}
-
-/* ===================== */
-/* CARD GROUP */
-/* ===================== */
-
-.card-group{
-
-position:relative;
-z-index:2;
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-gap:40px;
-max-width:1200px;
-margin:auto;
-
-}
-
-/* ===================== */
-/* CARDS */
-/* ===================== */
-
-.card{
-
-background:rgba(10,20,25,0.65);
-
-border:1px solid rgba(0,255,200,0.25);
-
-border-radius:12px;
-
-padding:30px;
-
-backdrop-filter:blur(8px);
-
-transition:all .35s ease;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-box-shadow:
-0 0 20px rgba(0,255,200,0.3),
-0 0 60px rgba(0,179,255,0.15);
-
-}
-
-/* TITLES */
-
-.card h3{
-
-color:white;
-
-letter-spacing:2px;
-
-margin-bottom:12px;
-
-text-shadow:
-0 0 10px #00ffc8,
-0 0 25px #00b3ff;
-
-}
-
-/* TEXT */
-
-.card p{
-
-font-size:1rem;
-color: white;
-line-height:1.6;
-
-margin-bottom:12px;
-
-}
-
-/* TAG */
-
-.tag{
-
-display: flex;
-font-size:1.2rem;
-text-align: center;
-align-items: center;
-color:#00ffff;
-border:1px solid rgba(0,255,200,.35);
-padding:8px;
-margin-top: 10px;
-
-border-radius:20px;
-text-shadow:
-0 0 10px #00ffc8,
-0 0 25px #00b3ff;
-}
-
-/* ===================== */
-/* NEURAL NETWORK */
-/* ===================== */
-
-.neural-network{
-
-position:absolute;
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-pointer-events:none;
-
-z-index:1;
-
-}
-
-
-
-/* NODOS */
-
-.neural-network circle{
-
-fill:#00ffc8;
-
-filter:drop-shadow(0 0 6px #00ffc8);
-
-animation:pulseNode 2s infinite;
-
-}
-
-/* ANIMACION FLUJO */
-
-@keyframes neuralFlow{
-
-0%{
-stroke-dashoffset:0;
-}
-
-100%{
-stroke-dashoffset:60;
-}
-
-}
-
-/* NODO PULSANTE */
-
-@keyframes pulseNode{
-
-0%{
-transform:scale(1);
-opacity:.8;
-}
-
-50%{
-transform:scale(1.6);
-opacity:1;
-}
-
-100%{
-transform:scale(1);
-opacity:.6;
-}
-
-}
-
-.brain-section{
-position:relative;
-height:auto;
-background:radial-gradient(circle at center,#020617,#000);
-overflow:hidden;
-}
-
-#brainCanvas{
-width:100%;
-height:100%;
-}
-
-.brain-content{
-position:absolute;
-z-index:8;
-text-align:center;
-top:45%;
-transform:translateY(-50%);
-color:#0b0f14;
-font-family:monospace;
-}
-
-.brain-title{
-color: white;
-backdrop-filter:blur(4px);
-font-size:4rem;
-text-shadow:
-0 0 10px #00ffc8,
-0 0 25px #00b3ff;
-}
-
-.brain-text{
-padding: 15px;
-max-width:800px;
-margin:auto;
-color: white;
-opacity: 1;
-backdrop-filter:blur(6px);
-}
-
-.biometric-section{
-height:100vh;
-background:radial-gradient(circle at center,#020617,#000);
-display:flex;
-align-items:center;
-justify-content:center;
-font-family:monospace;
-color:#00ffc8;
-position:relative;
-overflow:hidden;
-}
-
-/* Grid */
-
-.bio-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
-margin:40px 0;
-}
-
-/* Cards */
-
-.bio-card{
-border:1px solid rgba(0,255,200,0.3);
-padding:25px;
-text-align:center;
-background:rgba(0,20,25,0.5);
-backdrop-filter:blur(6px);
-box-shadow:
-0 0 10px rgba(0,255,200,0.2),
-inset 0 0 10px rgba(0,255,200,0.1);
-transition:0.3s;
-}
-
-.bio-card:hover{
-transform:translateY(-6px);
-box-shadow:0 0 25px rgba(0,255,200,0.6);
-}
-
-.bio-label{
-display:block;
-font-size:12px;
-letter-spacing:2px;
-opacity:.7;
-}
-
-.bio-value{
-display:block;
-font-size:36px;
-margin:10px 0;
-text-shadow:0 0 10px #00ffc8;
-}
-
-.bio-unit{
-font-size:11px;
-opacity:.5;
-}
-
-/* Title */
-
-.bio-title{
-text-align:center;
-font-size:28px;
-letter-spacing:3px;
-text-shadow:0 0 20px #00ffc8;
-}
-
-/* Signal monitor */
-
-.signal-monitor{
-margin-top:40px;
-border:1px solid rgba(0,255,200,0.4);
-padding:20px;
-background:#020b0f;
-backdrop-filter:blur(6px);
-box-shadow:0 0 20px rgba(0,255,200,0.2);
-}
-
-#bioSignal{
-backdrop-filter:blur(6px);
-width:800px;
-height:120px;
-}
-
-
-.brain-section{
-height:900px;
-background:radial-gradient(circle,#020617,#000);
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-font-family:monospace;
-color:#00ffc8;
-
-}
-
-.brain-title{
-text-align: center;
-margin-bottom: 25px;
-color: white;
-font-size:32px;
-letter-spacing:4px;
-text-shadow:0 0 20px #00ffc8;
-
-}
-
-.brain-container{
-width:90%;
-max-width:900px;
-}
-
-/* conexiones neuronales */
-
-.synapse{
-stroke:#00ffc8;
-stroke-width:0.5;
-opacity:0.5;
-transition:all .3s;
-
-}
-
-/* nodos */
-
-.neuron{
-
-fill:#00ffc8;
-opacity:0.4;
-transition:all .5s;
-
-}
-
-.neuron.active{
-
-opacity:1;
-r:10;
-filter:drop-shadow(0 0 10px #00ffc8);
-
-}
-
-.brain-info{
-margin-top: 600px;
-display: block;
-max-width:900px;
-color:#9fbec4;
-font-size:14px;
-
-
-}
-
-.brain-info h3{
-margin-top: 100;
-color:white;
-letter-spacing:3px;
-margin-bottom:15px;
-text-align:center;
-text-shadow:0 0 10px #00ffc8;
-
-}
-
-.brain-info p{
-color: white;
-margin-bottom:12px;
-
-}
-
-@media (max-width: 1024px){
-
-h1{
-font-size:70px;
-}
-
-p{
-font-size:18px;
-padding:0 20px;
-}
-
-.content{
-padding:20px;
-}
-
-/* grid biométrico */
-
-.bio-grid{
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-}
-
-/* señal biométrica */
-
-#bioSignal{
-width:100%;
-height:100px;
-}
-
-/* cerebro */
-
-.brain-container{
-width:100%;
-max-width:600px;
-}
-
-.brain-info{
-max-width:90%;
-margin-top:200px;
-}
-
-.card-group{
-gap:25px;
-}
-
-}
-
-
-/* ========================= */
-/* MOBILE */
-/* ========================= */
-
-@media (max-width: 600px){
-
-/* hero */
-
-h1{
-font-size:42px;
-letter-spacing:2px;
-}
-
-p{
-font-size:16px;
-max-width:90%;
-}
-
-/* evitar cortes de altura */
-
-.parallax-section,
-.section,
-.biometric-section{
-height:auto;
-min-height:100vh;
-padding:80px 20px;
-}
-
-/* partículas menos densas */
-
-.particle{
-width:3px;
-height:3px;
-}
-
-/* grid biométrico */
-
-.bio-grid{
-grid-template-columns:1fr;
-gap:18px;
-}
-
-/* cards */
-
-.card{
-padding:20px;
-}
-
-.card h3{
-font-size:18px;
-}
-
-/* biométrico */
-
-.bio-value{
-font-size:28px;
-}
-
-/* señal */
-
-#bioSignal{
-width:100%;
-height:80px;
-}
-
-/* cerebro */
-
-.brain-container{
-width:100%;
-max-width:100%;
-}
-
-.brain-title{
-font-size:24px;
-}
-
-.brain-info{
-margin-top:120px;
-font-size:13px;
-max-width:95%;
-}
-
-/* panel inferior */
-
-.biometric-panel{
-font-size:14px;
-padding:15px;
-}
-
-}
-
-@media (max-width:300px){
-
-.crt-overlay{
-display:none;
-}
-
-.layer-grid{
-opacity:0.3;
-}
-
-}
-
-
-
-/* ========================= */
-/* BACK TO TOP */
-/* ========================= */
-
-#backToTop{
-
-position:relative;
-
-bottom:80px;
-
-left: 1200px;
-
-width:50px;
-height:50px;
-
-border:none;
-
-border-radius:50%;
-
-background:transparent;
-
-color:white;
-
-font-size:24px;
-
-cursor:pointer;
-
-display:none;
-
-z-index:2000;
-
-box-shadow:
-0 0 10px #00ffc8,
-0 0 30px rgba(0,255,200,0.5);
-
-transition:0.3s;
-
-}
-
-#backToTop:hover{
-
-transform:scale(1.15);
-
-}
-</style>
-
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.6.1.2 (Windows)"/>
+	<meta name="created" content="2026-04-15T19:56:50.875000000"/>
+	<meta name="changed" content="2026-04-15T19:57:24.699000000"/>
 </head>
+<body lang="es-ES" dir="ltr"><p>&lt;!DOCTYPE html&gt;</p>
+<p>&lt;html lang=&quot;es&quot;&gt;</p>
+<p>&lt;head&gt;</p>
+<p>  &lt;meta charset=&quot;UTF-8&quot;&gt;</p>
+<p>  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+initial-scale=1.0&quot;&gt;</p>
+<p>  &lt;title&gt;FLY HIGH FESTIVAL&lt;/title&gt;</p>
+<p>  &lt;style&gt;</p>
+<p>    * {</p>
+<p>      margin: 0;</p>
+<p>      padding: 0;</p>
+<p>      box-sizing: border-box;</p>
+<p>      font-family: Arial, sans-serif;</p>
+<p>    }</p>
+<p><br/>
+<br/>
 
-<body>
-<nav class="navbar">
-
-<div class="logo">BIOVAL LAB</div>
-
-<ul class="nav-links">
-
-<li><a href="#home">HOME</a></li>
-<li><a href="#lab">LAB</a></li>
-<li><a href="#brain">NEURO</a></li>
-<li><a href="#biometrics">BIOMETRICS</a></li>
-<li><a href="#neuralmap">RESEARCH</a></li>
-
-</ul>
-
-</nav>
-
-<section id="home" class="parallax-section">
-<div class="neural-network">
-  <div class="particle" style="left:10%; animation-duration:12s;"></div>
-  <div class="particle" style="left:25%; animation-duration:8s;"></div>
-  <div class="particle" style="left:40%; animation-duration:15s;"></div>
-  <div class="particle" style="left:60%; animation-duration:10s;"></div>
-  <div class="particle" style="left:75%; animation-duration:13s;"></div>
-  <div class="particle" style="left:85%; animation-duration:9s;"></div>
-  <div class="particle" style="right:10%; animation-duration:12s;"></div>
-  <div class="particle" style="right:25%; animation-duration:8s;"></div>
-  <div class="particle" style="right:40%; animation-duration:15s;"></div>
-  <div class="particle" style="right:60%; animation-duration:10s;"></div>
-  <div class="particle" style="right:75%; animation-duration:13s;"></div>
-  <div class="particle" style="right:85%; animation-duration:9s;"></div>
-
-</div>
-  <div class="layer-bg"></div>
-  <div class="layer-grid"></div>
-
-  <div class="content">
-
-   <h1 data-text="BIOVAL LAB">BIOVAL LAB</h1>
-<div class="eeg"></div>
-    <p>
-      " Hack the Biology, Own your Data "
-    </p>
-  </div>
-</section>
-
-<section id="lab" class="section">
-<div class="crt-overlay">  </div>
-<section class="bioval-lab">
-
-<!-- RED NEURONAL -->
-<svg class="neural-network" viewBox="0 0 1200 500">
-
-<line x1="150" y1="120" x2="450" y2="250" />
-<line x1="450" y1="250" x2="750" y2="120" />
-<line x1="750" y1="120" x2="1050" y2="250" />
-<line x1="450" y1="250" x2="750" y2="380" />
-
-<circle cx="150" cy="120" r="4"/>
-<circle cx="450" cy="250" r="4"/>
-<circle cx="750" cy="120" r="4"/>
-<circle cx="1050" cy="250" r="4"/>
-<circle cx="750" cy="380" r="4"/>
-
-</svg>
-
-<div class="card-group">
-
-<div class="card">
-<h3>NEURODATA</h3>
-<p>
-Captura y análisis de señales EEG para estudiar
-estados cognitivos como atención, estrés o fatiga.
 </p>
-<span class="tag">EEG · BCI</span>
-</div>
+<p>    body {</p>
+<p>      background: #0a0a0a;</p>
+<p>      color: #fff;</p>
+<p>    }</p>
+<p><br/>
+<br/>
 
-<div class="card">
-<h3>WEARABLES</h3>
-<p>
-Integración de sensores biométricos para medir HRV,
-BPM y otros biomarcadores fisiológicos en tiempo real.
 </p>
-<span class="tag">HRV · Sensors</span>
-</div>
+<p>    header {</p>
+<p>      background: linear-gradient(180deg, #000, #111);</p>
+<p>      text-align: center;</p>
+<p>      padding: 30px 20px;</p>
+<p>    }</p>
+<p><br/>
+<br/>
 
-<div class="card">
-<h3>AI ANALYTICS</h3>
-<p>
-Uso de Machine Learning para analizar datos
-biométricos y detectar patrones cognitivos.
 </p>
-<span class="tag">NeuroAI</span>
-</div>
+<p>    header img {</p>
+<p>      max-width: 350px;</p>
+<p>    }</p>
+<p><br/>
+<br/>
 
-<div class="card">
-<h3>OPEN SOURCE LAB</h3>
-<p>
-Desarrollo de herramientas abiertas para biohacking,
-investigación personal y experimentación científica.
 </p>
-<span class="tag">Python · Hardware</span>
-</div>
+<p>    nav {</p>
+<p>      display: flex;</p>
+<p>      justify-content: center;</p>
+<p>      gap: 30px;</p>
+<p>      background: #111;</p>
+<p>      padding: 15px;</p>
+<p>      border-top: 1px solid #222;</p>
+<p>      border-bottom: 1px solid #222;</p>
+<p>    }</p>
+<p><br/>
+<br/>
 
-</div>
-
-</section>
-
-</section>
-<section id="brain" class="brain-section">
-
-<canvas id="brainCanvas"></canvas>
-
-<div class="brain-content">
-<h2 class="brain-title">AI NEURO INTERFACE</h2>
-
-<p class="brain-text">
-Investigación en biohacking, EEG, IA cognitiva y análisis biométrico.
-Exploramos la interacción entre señales neuronales, estados mentales
-y optimización del rendimiento humano mediante wearables y machine learning.
 </p>
+<p>    nav a {</p>
+<p>      color: #ff6a00;</p>
+<p>      text-decoration: none;</p>
+<p>      font-weight: bold;</p>
+<p>    }</p>
+<p><br/>
+<br/>
 
-</div>
-
-</section>
-
-<section id="biometrics" class="biometric-section">
-
-<div class="biometric-container">
-
-<h2 class="bio-title">BIOVAL LAB · BIOMETRIC MONITOR</h2>
-
-<div class="bio-grid">
-
-<div class="bio-card">
-<span class="bio-label">BPM</span>
-<span class="bio-value" id="bpm">72</span>
-<span class="bio-unit">heart rate</span>
-</div>
-
-<div class="bio-card">
-<span class="bio-label">HRV</span>
-<span class="bio-value" id="hrv">64</span>
-<span class="bio-unit">ms variability</span>
-</div>
-
-<div class="bio-card">
-<span class="bio-label">ALPHA</span>
-<span class="bio-value" id="alpha">8.2</span>
-<span class="bio-unit">Hz brainwave</span>
-</div>
-
-<div class="bio-card">
-<span class="bio-label">FOCUS</span>
-<span class="bio-value" id="focus">76</span>
-<span class="bio-unit">% cognitive</span>
-</div>
-
-</div>
-
-<div class="signal-monitor">
-<canvas id="bioSignal"></canvas>
-</div>
-
-</div>
-
-</section>
-
-<section id="neuralmap" class="brain-section">
-
-<div class="brain-info">
-<h2 class="brain-title">NEURAL ACTIVITY MAP</h2>
-
-
-<h3>Human–Machine Interface</h3>
-
-<p>
-En BIOVAL LAB investigamos la interacción entre el sistema nervioso humano
-y sistemas computacionales mediante interfaces biométricas no intrusivas.
-A través de sensores EEG, wearables fisiológicos y análisis de datos con
-inteligencia artificial, es posible interpretar patrones de actividad
-neuronal sin necesidad de implantes.
 </p>
+<p>    nav a:hover {</p>
+<p>      color: #fff;</p>
+<p>    }</p>
+<p><br/>
+<br/>
 
-<p>
-Nuestro objetivo es desarrollar tecnologías abiertas que permitan crear
-interfaces cerebro-máquina accesibles, capaces de traducir señales
-biológicas —como ondas cerebrales, variabilidad cardíaca o actividad
-neuroeléctrica— en información utilizable por sistemas digitales.
 </p>
+<p>    section {</p>
+<p>      padding: 60px 20px;</p>
+<p>      max-width: 1200px;</p>
+<p>      margin: auto;</p>
+<p>      text-align: center;</p>
+<p>    }</p>
+<p><br/>
+<br/>
 
-<p>
-Este enfoque permite explorar nuevas formas de interacción humano-máquina,
-mejorar el rendimiento cognitivo y estudiar estados mentales en tiempo real,
-todo ello manteniendo una conexión completamente segura y no invasiva.
 </p>
-
-</div>
-
-<div class="brain-container">
-
-
-
-<svg id="brainMap" viewBox="0 0 800 600">
-
-
-
-<!-- conexiones -->
-
-<line class="synapse" x1="200" y1="120" x2="320" y2="90"/>
-<line class="synapse" x1="320" y1="90" x2="450" y2="110"/>
-<line class="synapse" x1="450" y1="110" x2="580" y2="160"/>
-<line class="synapse" x1="200" y1="200" x2="350" y2="210"/>
-<line class="synapse" x1="350" y1="210" x2="520" y2="240"/>
-<line class="synapse" x1="320" y1="90" x2="350" y2="210"/>
-
-
-<!-- nodos neuronales -->
-
-<circle class="neuron" cx="200" cy="120" r="6"/>
-<circle class="neuron" cx="320" cy="90" r="6"/>
-<circle class="neuron" cx="450" cy="110" r="6"/>
-<circle class="neuron" cx="580" cy="160" r="6"/>
-<circle class="neuron" cx="200" cy="200" r="6"/>
-<circle class="neuron" cx="350" cy="210" r="6"/>
-<circle class="neuron" cx="520" cy="240" r="6"/>
-
-</svg>
-
-
-
-</div>
-
-<section id="research" class="research">
-
-<h2>RESEARCH AREAS</h2>
-
-<div class="research-grid">
-
-<div>
-EEG SIGNAL PROCESSING
-</div>
-
-<div>
-COGNITIVE AI
-</div>
-
-<div>
-WEARABLE BIOSENSORS
-</div>
-
-<div>
-HUMAN MACHINE INTERFACE
-</div>
-
-</div>
-
-</section>
-
-</section>
-
-
-
-<script>
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll(){
-
-const trigger = window.innerHeight * 0.85;
-
-reveals.forEach(el => {
-
-const top = el.getBoundingClientRect().top;
-
-if(top < trigger){
-
-el.classList.add("visible");
-
-}
-
-});
-
-}
-
-window.addEventListener("scroll", revealOnScroll);
-</script>
-
-<script>
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-
-const loader = new GLTFLoader();
-
-loader.load("/assets/brain.glb", function(gltf){
-
-const brain = gltf.scene;
-
-brain.scale.set(2,2,2);
-
-scene.add(brain);
-
-function animate(){
-
-requestAnimationFrame(animate);
-
-brain.rotation.y += 0.002;
-
-renderer.render(scene,camera);
-
-}
-
-animate();
-
-});
-
-</script>
-
-<script type="module">
-
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.158/build/three.module.js";
-
-const canvas = document.querySelector("#brainCanvas");
-
-const scene = new THREE.Scene();
-
-const camera = new THREE.PerspectiveCamera(
-60,
-window.innerWidth/window.innerHeight,
-0.1,
-1000
-);
-
-camera.position.z = 1;
-
-const renderer = new THREE.WebGLRenderer({
-canvas,
-alpha:true,
-antialias:true
-});
-
-renderer.setSize(window.innerWidth,window.innerHeight);
-
-const light = new THREE.PointLight(0x00ffc8,2);
-light.position.set(5,5,5);
-scene.add(light);
-
-const group = new THREE.Group();
-scene.add(group);
-
-function createBrainLobe(xOffset){
-
-for(let i=0;i<12;i++){
-
-const geometry = new THREE.SphereGeometry(
-0.8 - (i*0.08),
-32,
-32
-);
-
-const material = new THREE.MeshBasicMaterial({
-color:0x00ffc8,
-wireframe:true,
-transparent:true,
-opacity:0.2
-});
-
-const mesh = new THREE.Mesh(geometry,material);
-
-mesh.position.x = xOffset;
-mesh.position.y = Math.sin(i*0.5)*0.2;
-
-group.add(mesh);
-
-}
-
-}
-
-
-createBrainLobe(0);
-
-function animate(){
-
-requestAnimationFrame(animate);
-
-group.rotation.y += 0.0004;
-group.rotation.x += 0.0008;
-
-renderer.render(scene,camera);
-
-}
-
-animate();
-
-window.addEventListener("resize",()=>{
-
-camera.aspect = window.innerWidth/window.innerHeight;
-camera.updateProjectionMatrix();
-
-renderer.setSize(window.innerWidth,window.innerHeight);
-
-});
-
-</script>
-
-<script>
-
-const canvas = document.getElementById("bioSignal");
-const ctx = canvas.getContext("2d");
-
-canvas.width = 700;
-canvas.height = 120;
-
-let x = 0;
-
-function drawSignal(){
-
-ctx.fillStyle = "rgba(2,11,15,0.25)";
-ctx.fillRect(0,0,canvas.width,canvas.height);
-
-ctx.strokeStyle = "#00ffc8";
-ctx.lineWidth = 1;
-
-ctx.beginPath();
-
-for(let i=0;i<canvas.width;i++){
-
-const y =
-60 +
-Math.sin((i+x)*0.05)*10 +
-Math.sin((i+x)*0.01)*20;
-
-ctx.lineTo(i,y);
-
-}
-
-ctx.stroke();
-
-x += 2;
-
-requestAnimationFrame(drawSignal);
-
-}
-
-drawSignal();
-
-
-// simulación biométrica dinámica
-
-function updateMetrics(){
-
-document.getElementById("bpm").innerText =
-70 + Math.floor(Math.random()*10);
-
-document.getElementById("hrv").innerText =
-60 + Math.floor(Math.random()*15);
-
-document.getElementById("alpha").innerText =
-(7 + Math.random()*2).toFixed(1);
-
-document.getElementById("focus").innerText =
-70 + Math.floor(Math.random()*20);
-
-}
-
-setInterval(updateMetrics,2000);
-
-</script>
-<button id="backToTop">↑</button>
-<script>
-
-const neurons = document.querySelectorAll(".neuron");
-
-function neuralActivity(){
-
-neurons.forEach(n=>{
-
-n.classList.remove("active");
-
-});
-
-let randomNeuron = neurons[Math.floor(Math.random()*neurons.length)];
-
-randomNeuron.classList.add("active");
-
-}
-
-setInterval(neuralActivity,500);
-
-</script>
-
-<script>
-
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", function(){
-
-if(window.scrollY > 300){
-
-backToTop.style.display = "block";
-
-}else{
-
-backToTop.style.display = "none";
-
-}
-
-});
-
-backToTop.addEventListener("click", function(){
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-});
-
-</script>
-
+<p>    h1, h2 {</p>
+<p>      margin-bottom: 20px;</p>
+<p>      color: #ff6a00;</p>
+<p>    }</p>
+<p><br/>
+<br/>
+
+</p>
+<p>    .hero {</p>
+<p>      background:
+url('https://images.unsplash.com/photo-1506157786151-b8491531f063')
+center/cover no-repeat;</p>
+<p>      height: 70vh;</p>
+<p>      display: flex;</p>
+<p>      flex-direction: column;</p>
+<p>      justify-content: center;</p>
+<p>      align-items: center;</p>
+<p>    }</p>
+<p><br/>
+<br/>
+
+</p>
+<p>    .hero h1 {</p>
+<p>      font-size: 3em;</p>
+<p>      text-shadow: 0 0 20px #ff6a00;</p>
+<p>    }</p>
+<p><br/>
+<br/>
+
+</p>
+<p>    .btn {</p>
+<p>      background: #ff6a00;</p>
+<p>      padding: 15px 30px;</p>
+<p>      margin-top: 20px;</p>
+<p>      color: #fff;</p>
+<p>      text-decoration: none;</p>
+<p>      border-radius: 5px;</p>
+<p>      transition: 0.3s;</p>
+<p>    }</p>
+<p><br/>
+<br/>
+
+</p>
+<p>    .btn:hover {</p>
+<p>      background: #ff8c42;</p>
+<p>    }</p>
+<p><br/>
+<br/>
+
+</p>
+<p>    .grid {</p>
+<p>      display: grid;</p>
+<p>      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</p>
+<p>      gap: 20px;</p>
+<p>      margin-top: 30px;</p>
+<p>    }</p>
+<p><br/>
+<br/>
+
+</p>
+<p>    .card {</p>
+<p>      background: #111;</p>
+<p>      padding: 20px;</p>
+<p>      border: 1px solid #222;</p>
+<p>      border-radius: 10px;</p>
+<p>    }</p>
+<p><br/>
+<br/>
+
+</p>
+<p>    footer {</p>
+<p>      background: #000;</p>
+<p>      text-align: center;</p>
+<p>      padding: 20px;</p>
+<p>      border-top: 1px solid #222;</p>
+<p>    }</p>
+<p>  &lt;/style&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p><br/>
+<br/>
+
+</p>
+<p>&lt;header&gt;</p>
+<p>  &lt;img src=&quot;logo.png&quot; alt=&quot;FLY HIGH FESTIVAL
+Logo&quot;&gt;</p>
+<p>&lt;/header&gt;</p>
+<p><br/>
+<br/>
+
+</p>
+<p>&lt;nav&gt;</p>
+<p>  &lt;a href=&quot;#inicio&quot;&gt;Inicio&lt;/a&gt;</p>
+<p>  &lt;a href=&quot;#lineup&quot;&gt;Lineup&lt;/a&gt;</p>
+<p>  &lt;a href=&quot;#info&quot;&gt;Info&lt;/a&gt;</p>
+<p>  &lt;a href=&quot;#entradas&quot;&gt;Entradas&lt;/a&gt;</p>
+<p>  &lt;a href=&quot;#contacto&quot;&gt;Contacto&lt;/a&gt;</p>
+<p>&lt;/nav&gt;</p>
+<p><br/>
+<br/>
+
+</p>
+<p>&lt;section id=&quot;inicio&quot; class=&quot;hero&quot;&gt;</p>
+<p>  &lt;h1&gt;FLY HIGH FESTIVAL&lt;/h1&gt;</p>
+<p>  &lt;p&gt;El evento más potente de música electrónica en
+Paterna&lt;/p&gt;</p>
+<p>  &lt;a href=&quot;#entradas&quot; class=&quot;btn&quot;&gt;Comprar
+Entradas&lt;/a&gt;</p>
+<p>&lt;/section&gt;</p>
+<p><br/>
+<br/>
+
+</p>
+<p>&lt;section id=&quot;lineup&quot;&gt;</p>
+<p>  &lt;h2&gt;LINEUP&lt;/h2&gt;</p>
+<p>  &lt;div class=&quot;grid&quot;&gt;</p>
+<p>    &lt;div class=&quot;card&quot;&gt;DJ HEADLINER 1&lt;/div&gt;</p>
+<p>    &lt;div class=&quot;card&quot;&gt;DJ HEADLINER 2&lt;/div&gt;</p>
+<p>    &lt;div class=&quot;card&quot;&gt;DJ HEADLINER 3&lt;/div&gt;</p>
+<p>    &lt;div class=&quot;card&quot;&gt;DJ LOCAL 1&lt;/div&gt;</p>
+<p>    &lt;div class=&quot;card&quot;&gt;DJ LOCAL 2&lt;/div&gt;</p>
+<p>  &lt;/div&gt;</p>
+<p>&lt;/section&gt;</p>
+<p><br/>
+<br/>
+
+</p>
+<p>&lt;section id=&quot;info&quot;&gt;</p>
+<p>  &lt;h2&gt;INFORMACIÓN&lt;/h2&gt;</p>
+<p>  &lt;p&gt;&lt;strong&gt;Ubicación:&lt;/strong&gt; Paterna,
+Valencia&lt;/p&gt;</p>
+<p>  &lt;p&gt;&lt;strong&gt;Fecha:&lt;/strong&gt; Próximamente&lt;/p&gt;</p>
+<p>  &lt;p&gt;Disfruta de luces, sonido y energía en una experiencia
+única.&lt;/p&gt;</p>
+<p>&lt;/section&gt;</p>
+<p><br/>
+<br/>
+
+</p>
+<p>&lt;section id=&quot;entradas&quot;&gt;</p>
+<p>  &lt;h2&gt;ENTRADAS&lt;/h2&gt;</p>
+<p>  &lt;p&gt;Compra tus entradas antes de que se agoten.&lt;/p&gt;</p>
+<p>  &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Comprar
+Ahora&lt;/a&gt;</p>
+<p>&lt;/section&gt;</p>
+<p><br/>
+<br/>
+
+</p>
+<p>&lt;section id=&quot;contacto&quot;&gt;</p>
+<p>  &lt;h2&gt;CONTACTO&lt;/h2&gt;</p>
+<p>  &lt;p&gt;Email: info@flyhighfestival.com&lt;/p&gt;</p>
+<p>  &lt;p&gt;Instagram: @flyhighfestival&lt;/p&gt;</p>
+<p>&lt;/section&gt;</p>
+<p><br/>
+<br/>
+
+</p>
+<p>&lt;footer&gt;</p>
+<p>  &lt;p&gt;© 2026 FLY HIGH FESTIVAL&lt;/p&gt;</p>
+<p>&lt;/footer&gt;</p>
+<p><br/>
+<br/>
+
+</p>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
 </body>
 </html>
