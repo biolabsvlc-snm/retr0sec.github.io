@@ -60,12 +60,38 @@
     }
 
     .hero {
-      height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
 
     .hero h1 {
       font-size: 3em;
@@ -123,11 +149,19 @@
 </nav>
 
 <section id="inicio" class="hero">
-  <h1>FLY HIGH FESTIVAL</h1>
-  <p>El evento más potente de música electrónica en Paterna</p>
-  <a href="#entradas" class="btn">Comprar Entradas</a>
-</section>
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="video.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
 
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>FLY HIGH FESTIVAL</h1>
+    <p>El evento más potente de música electrónica en Paterna</p>
+    <a href="#entradas" class="btn">Comprar Entradas</a>
+  </div>
+</section>
 <section id="lineup">
   <h2>LINEUP</h2>
   <div class="grid">
